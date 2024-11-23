@@ -1,44 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Novo EarBuds</title>
+    <title>Alienis Earbuds</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet"/>
-    <!-- link to greensock main library and scroll plugin -->
+    <link href="css/grid.css" rel="stylesheet"/>
+   
   </head>
   <body>
-    <model-viewer id="model" src="model/saif-model.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
 
-        <button class="Hotspot" slot="hotspot-1" data-position="-0.8129511883118772m 0.465456795600177m -0.5043421226886293m" data-normal="-0.4355531633067241m -0.8999901318318211m 0.017640990302354952m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation"id="hotspot-1">charging pin</div>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div id="logo-container">
+                <a href="index.html"><img class="logo" src="images/alienis-logo-white.svg" alt="Alienis Logo" width="150"></a>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
 
-        </button><button class="Hotspot" slot="hotspot-2" data-position="-0.2815051738872778m 1.2769852779205233m -0.3398942569995865m" data-normal="-0.14574144902541605m 0.9776317282081215m 0.15164311404338057m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation"id="hotspot-2">outer speaker
+    <!-- Main Content -->
+    <main>
+
+      <section class="sections section1">
+        <canvas id="explode-view"></canvas>
+      </section>
+
+      <!-- X-RAY Section -->
+      <section class="section-xray">
+        <div class="x-ray-container">
+            <h2>X-RAY</h2>
+            <p>AirPods Pro 2 take the listening experience to a new level of individuality. Personalized Spatial Audio with dynamic head tracking works with all your devices to immerse you deeper in all-around sound when you're listening to music, watching a movie or gaming. Adaptive EQ adjusts the sound for the fit of AirPods Pro 2, so you hear every frequency as it was intended.</p>
+            <img src="images/xray1.png" alt="Earbud X-ray">
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="section-about">
+        <h2>ABOUT</h2>
+        <div class="about-content">
+            <img src="images/mother-board.png" alt="Earbud">
+            <p>AirPods Pro 2 take the listening experience to a new level of individuality. Personalized Spatial Audio with dynamic head tracking works with all your devices to immerse you deeper in all-around sound when you're listening to music, watching a movie, or gaming. Adaptive EQ accounts for the fit of AirPods Pro 2, so you hear every frequency as it was intended.</p>
+        </div>
+      </section>
+
+      <!-- Earbuds Section -->
+      <section class="section-earbuds">
+        <h2>EARBUDS</h2>
+        <div class="earbuds-content">
+            <img src="images/black-bud.png" alt="Black Earbud">
+            <img src="images/white-bud.png" alt="White Earbud">
+        </div>
+        <div class="buy-buttons">
+            <button class="buy-btn">BUY</button>
+            <button class="buy-btn">BUY</button>
+        </div>
+      </section>
+
+      <!-- Model Viewer Section -->
+      <section class="section-3d-model">
+        <h2>See It From Every Angle</h2>
+        <model-viewer id="model" src="model/saif-model.gltf" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
+
+            <button class="Hotspot" slot="hotspot-1" data-position="-0.8129511883118772m 0.465456795600177m -0.5043421226886293m" data-normal="-0.4355531633067241m -0.8999901318318211m 0.017640990302354952m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation" id="hotspot-1">charging pin</div>
+            </button>
+            <button class="Hotspot" slot="hotspot-2" data-position="-0.2815051738872778m 1.2769852779205233m -0.3398942569995865m" data-normal="-0.14574144902541605m 0.9776317282081215m 0.15164311404338057m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation" id="hotspot-2">outer speaker</div>
+            </button>
+            <button class="Hotspot" slot="hotspot-3" data-position="0.17885759662124825m -0.3741222845853245m -0.48498330254828537m" data-normal="0.500192672940755m -0.012354792906319604m -0.865825992349863m" data-visibility-attribute="visible">
+                <div class="HotspotAnnotation" id="hotspot-3">main speaker</div>
+            </button>
+
+            <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
             </div>
 
-        </button>
-        
-        <button class="Hotspot" slot="hotspot-3" data-position="0.17885759662124825m -0.3741222845853245m -0.48498330254828537m" data-normal="0.500192672940755m -0.012354792906319604m -0.865825992349863m" data-visibility-attribute="visible">
-            <div class="HotspotAnnotation"id=hotspot-3>main speaker
+            <button slot="ar-button" id="ar-button">
+                View in your space
+            </button>
+
+            <div id="ar-prompt">
+                <img src="ar_hand_prompt.png">
             </div>
-        </button>
+        </model-viewer>
+      </section>
 
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
+    </main>
 
-        <button slot="ar-button" id="ar-button">
-            View in your space
-        </button>
+    <!-- Footer Section -->
+    <footer>
+        <section class="footer-content">
+            <div class="footer-logo">
+                <img src="images/alienis-logo-white.svg" alt="Alienis Logo" width="100">
+            </div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Support</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="images/logo-twitter.svg" alt="twitter"></a>
+                <a href="#"><img src="images/logo-instagram.svg" alt="instagram"></a>
+                <a href="#"><img src="images/logo-behance.svg" alt="behance"></a>
+                <a href="#"><img src="images/logo-linkedin.svg" alt="linkedin"></a>
+            </div>
+        </section>
+    </footer>
 
-        <div id="ar-prompt">
-            <img src="ar_hand_prompt.png">
-        </div>
-      </model-viewer>  
-    <!-- Loads <model-viewer> for browsers: -->
+    <!-- External JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.1/model-viewer.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/ScrollTrigger.js"></script>
+
     <script src="js/main.js"></script>
+    <script src="js/menu.js">  </script>
+
   </body>
 </html>
