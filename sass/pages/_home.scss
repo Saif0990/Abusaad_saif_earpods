@@ -3,6 +3,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     margin: 0;
     color: white;
+    
 }
 
 h2, h3, p, a {
@@ -22,6 +23,15 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+
+.section1{
+    overflow: hidden;
+}
+
+.Hotspot{
+    display: none;
 }
 
 #logo-container img {
@@ -123,6 +133,7 @@ nav {
     justify-content: center;
     gap: 40px;
     margin-bottom: 40px;
+    align-items: center;
 }
 
 .earbuds-content img {
@@ -131,10 +142,22 @@ nav {
     border-radius: 8px;
 }
 
+.about-content, .earbuds-content {
+    flex-direction: column;
+}
+
+.buy-buttons {
+    flex-direction: column;
+}
+.btn1{
+    display: none;
+}
+
+
 .buy-buttons {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 140px;
 }
 
 .buy-btn {
@@ -199,22 +222,43 @@ footer {
     margin: 10px;
 }
 
-.social-links img {
+.social-links  a {
     width: 30px;
+    height: auto;
 }
 
+// .social-links a {
+//     width: 10px;
+    
+
+// }
+
 /* Mobile and Responsive Adjustments */
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+
+ .hamburger{
+        display: none ;
+    }
+
+    .Hotspot{
+        display: block;
+    }
+
+    .btn1{
+        display: block;
+    }
+    
+
     .section-xray, .section-about, .section-earbuds, .section-3d-model {
         padding: 40px 20px;
     }
 
     .about-content, .earbuds-content {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .buy-buttons {
-        flex-direction: column;
+        flex-direction: row;
     }
 
     .footer-content {
